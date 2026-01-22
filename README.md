@@ -13,7 +13,6 @@ Typically, LLMs have a "Context Window" limit. If you force a document containin
 **MCP-RLM changes how LLMs process data:**
 Instead of "reading" the entire document at once, MCP-RLM treats the document as an **External Environment** (like a database or file) that can be accessed programmatically. The agent uses Python code to break down, scan, and perform *sub-queries* recursively to itself to answer complex questions from massive data.
 
----
 
 ## ✨ Key Features
 
@@ -22,7 +21,6 @@ Instead of "reading" the entire document at once, MCP-RLM treats the document as
 * **🎯 High Accuracy on Reasoning**: Reduces hallucinations on complex *needle-in-a-haystack* tasks because each section is examined in isolation.
 * **🔌 Provider Agnostic**: Flexible configuration! Use **Claude** as the brain (Root) and **Ollama/Local LLM** as the worker (Sub) for privacy and cost savings.
 
----
 
 ## ⚙️ How It Works & Architecture
 
@@ -46,7 +44,6 @@ The system divides tasks into two AI model roles for cost efficiency and accurac
 
 
 
----
 
 ## 🚀 Installation & Usage
 
@@ -62,7 +59,6 @@ The system divides tasks into two AI model roles for cost efficiency and accurac
 git clone https://github.com/username/MCP-RLM.git
 cd MCP-RLM
 
-```
 
 
 2. **Create Virtual Environment**
@@ -71,14 +67,12 @@ python -m venv venv
 source venv/bin/activate  # For Linux/Mac
 # venv\Scripts\activate   # For Windows
 
-```
 
 
 3. **Install Dependencies**
 ```bash
 pip install -r requirements.txt
 
-```
 
 
 **What is being installed?**
@@ -88,10 +82,8 @@ pip install -r requirements.txt
 * `tiktoken`: To count tokens to ensure they fit model limits.
 
 
-```
 
 
-```
 
 
 4. **Environment Configuration**
@@ -99,7 +91,6 @@ Copy `.env.EXAMPLE` to `.env` and fill in your API Keys.
 ```bash
 cp .env.EXAMPLE .env
 
-```
 
 
 
@@ -107,7 +98,6 @@ cp .env.EXAMPLE .env
 
 You can control the agent's behavior via `config.yaml`.
 
-```yaml
 # config.yaml
 agents:
   root:
@@ -117,20 +107,16 @@ agents:
     provider: "openai"         # Or use "ollama" for local
     model: "gpt-4o-mini"       # Fast & Cheap for hundreds of loops
 
-```
 
 ### Running the Server
 
 Run the MCP server:
 
-```bash
 python server.py
 
-```
 
 The server will run and be ready to connect with MCP clients (like Claude Desktop or Cursor).
 
----
 
 ## Client Configuration
 
@@ -145,7 +131,6 @@ Open the Claude Desktop configuration file:
 
 Add the following configuration:
 
-```json
 {
   "mcpServers": {
     "rlm-researcher": {
@@ -155,7 +140,6 @@ Add the following configuration:
   }
 }
 
-```
 
 > **Note:** Replace `/path/to/MCP-RLM/` with the absolute path to your project folder.
 
@@ -171,7 +155,7 @@ Add the following configuration:
 
 4. Click **Save**.
 
-If successful, the status indicator will turn green.
+If successful, the status indiator will turn green.
 
 ### 3. Antigravity IDE
 
@@ -186,7 +170,6 @@ You can use the UI or edit the configuration file manually.
 **Method 2: Manual Config**
 Edit the file `~/.gemini/antigravity/mcp_config.json`:
 
-```json
 {
   "mcpServers": {
     "rlm-researcher": {
@@ -197,9 +180,7 @@ Edit the file `~/.gemini/antigravity/mcp_config.json`:
   }
 }
 
-```
 
----
 
 ## 📚 References & Credits
 
