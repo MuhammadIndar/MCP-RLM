@@ -1,10 +1,10 @@
 
 
-# 🧠 MCP-RLM: Recursive Language Model Agent
+# MCP-RLM: Recursive Language Model Agent
 
 **Infinite Context Reasoning for Large Language Models**
 
-## 📖 What is MCP-RLM?
+## What is MCP-RLM?
 
 **MCP-RLM** is an *open-source* implementation of the **Recursive Language Models (RLMs)** architecture introduced by researchers at MIT CSAIL (Zhang et al., 2025).
 
@@ -14,15 +14,15 @@ Typically, LLMs have a "Context Window" limit. If you force a document containin
 Instead of "reading" the entire document at once, MCP-RLM treats the document as an **External Environment** (like a database or file) that can be accessed programmatically. The agent uses Python code to break down, scan, and perform *sub-queries* recursively to itself to answer complex questions from massive data.
 
 
-## ✨ Key Features
+## Key Features
 
-* **♾️ Infinite Context Scaling**: Capable of processing documents far larger than the model's token limit (theoretically up to 10 Million+ tokens).
-* **📉 Cost-Effective**: Uses small models (Worker) for heavy scanning, and large models (Planner) only for orchestration. Cheaper than loading the entire context into a large model.
-* **🎯 High Accuracy on Reasoning**: Reduces hallucinations on complex *needle-in-a-haystack* tasks because each section is examined in isolation.
-* **🔌 Provider Agnostic**: Flexible configuration! Use **Claude** as the brain (Root) and **Ollama/Local LLM** as the worker (Sub) for privacy and cost savings.
+**Infinite Context Scaling**: Capable of processing documents far larger than the model's token limit (theoretically up to 10 Million+ tokens).
+**Cost-Effective**: Uses small models (Worker) for heavy scanning, and large models (Planner) only for orchestration. Cheaper than loading the entire context into a large model.
+**High Accuracy on Reasoning**: Reduces hallucinations on complex *needle-in-a-haystack* tasks because each section is examined in isolation.
+**Provider Agnostic**: Flexible configuration! Use **Claude** as the brain (Root) and **Ollama/Local LLM** as the worker (Sub) for privacy and cost savings.
 
 
-## ⚙️ How It Works & Architecture
+## How It Works & Architecture
 
 This implementation uses the **MCP (Model Context Protocol)** to connect your IDE/Chatbot (such as Cursor, Claude Desktop) with the "RLM Engine" behind the scenes.
 ![RLM](./assets/RLM.png)
@@ -31,21 +31,21 @@ This implementation uses the **MCP (Model Context Protocol)** to connect your ID
 
 The system divides tasks into two AI model roles for cost efficiency and accuracy:
 
-1. **🧠 Root Agent (The Planner)**
-* **Role**: Project Manager.
-* **Task**: Does not read the document directly. It views metadata (file length), plans strategies, and writes Python code to execute those strategies.
-* **Model**: Smart model (e.g., `Claude-3.5-Sonnet`, `GPT-4o`).
+1. **Root Agent (The Planner)**
+**Role**: Project Manager.
+**Task**: Does not read the document directly. It views metadata (file length), plans strategies, and writes Python code to execute those strategies.
+**Model**: Smart model (e.g., `Claude-3.5-Sonnet`, `GPT-4o`).
 
 
-2. **👷 Sub Agent (The Worker)**
-* **Role**: Field Worker.
-* **Task**: Called hundreds of times by the Python code to read small data *chunks* and extract specific information.
-* **Model**: Fast & cheap model (e.g., `GPT-4o-mini`, `Llama-3`, `Haiku`).
+2. **Sub Agent (The Worker)**
+**Role**: Field Worker.
+**Task**: Called hundreds of times by the Python code to read small data *chunks* and extract specific information.
+**Model**: Fast & cheap model (e.g., `GPT-4o-mini`, `Llama-3`, `Haiku`).
 
 
 
 
-## 🚀 Installation & Usage
+## Installation & Usage
 
 ### Prerequisites
 
@@ -55,14 +55,12 @@ The system divides tasks into two AI model roles for cost efficiency and accurac
 ### Installation Steps
 
 1. **Clone Repository**
-```bash
 git clone https://github.com/username/MCP-RLM.git
 cd MCP-RLM
 
 
 
 2. **Create Virtual Environment**
-```bash
 python -m venv venv
 source venv/bin/activate  # For Linux/Mac
 # venv\Scripts\activate   # For Windows
@@ -70,7 +68,6 @@ source venv/bin/activate  # For Linux/Mac
 
 
 3. **Install Dependencies**
-```bash
 pip install -r requirements.txt
 
 
@@ -88,7 +85,6 @@ pip install -r requirements.txt
 
 4. **Environment Configuration**
 Copy `.env.EXAMPLE` to `.env` and fill in your API Keys.
-```bash
 cp .env.EXAMPLE .env
 
 
@@ -182,7 +178,7 @@ Edit the file `~/.gemini/antigravity/mcp_config.json`:
 
 
 
-## 📚 References & Credits
+## References & Credits
 
 This project is an experimental implementation based on the following research paper:
 
@@ -191,10 +187,8 @@ This project is an experimental implementation based on the following research p
 
 This paper proposes RLM as a general inference strategy that treats long prompts as an external environment, enabling programmatic problem decomposition.
 
----
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License**. See the [LICENSE](https://www.google.com/search?q=LICENSE) file for more details.
 
----
