@@ -1,0 +1,46 @@
+# --- PROVIDER DEFINITION (Endpoint & Key Mapping) ---
+providers:
+  # Option 1: OpenRouter
+  openrouter:
+    type: "openai_compatible"
+    base_url: "https://openrouter.ai/api/v1"
+    api_key_env: "OPENROUTER_API_KEY"
+
+  # Option 2: Local Ollama
+  ollama_local:
+    type: "openai_compatible"
+    base_url: "http://localhost:11434/v1"
+    api_key_env: "OLLAMA_API_KEY"
+
+  # Option 3: OpenAI Official
+  openai_official:
+    type: "openai_compatible"
+    base_url: "https://api.openai.com/v1"
+    api_key_env: "OPENAI_API_KEY"
+
+  # Option 4: Anthropic Official
+  anthropic_official:
+    type: "anthropic"
+    api_key_env: "ANTHROPIC_API_KEY"
+
+# --- AGENT DEFINITION (Role to Provider Mapping) ---
+agents:
+  # ROOT AGENT: "Planner". Tasked with writing Python code & Strategy.
+  # RECOMMENDATION: Use a smart/capable model (Claude 3.5 Sonnet / GPT-4o).
+  root:
+    provider_ref: "openrouter" # Refers to 'anthropic_official' above
+    model: "mistralai/mistral-small-3.1-24b-instruct:free"
+    temperature: 0.0
+    max_tokens: 4096
+
+  # SUB AGENT: "Worker". Tasked with reading data chunks (called 100x+).
+  # RECOMMENDATION: Use a cheap/fast model (GPT-4o-mini / Llama3 / Haiku).
+  sub:
+    provider_ref: "openrouter" # Refers to 'openai_official' above
+    model: "qwen/qwen-2.5-vl-7b-instruct:free"
+    temperature: 0.0
+    max_tokens: 1000
+
+# --- SYSTEM SETTINGS ---
+system:
+  max_loops: 5 # Maximum loops for Root LM code refinement
