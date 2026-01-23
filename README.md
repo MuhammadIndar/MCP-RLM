@@ -205,7 +205,7 @@ Edit the file `~/.gemini/antigravity/mcp_config.json`:
 This project is an experimental implementation based on the following research paper:
 
 > **Recursive Language Models**
-> *Alex L. Zhang, Tim Kraska, Omar Khattab (MIT CSAIL) 2025*
+> *Alex L. Zhang, Tim Kraska, Omar Khattab (MIT CSAIL) 2025* [![arXiv](https://img.shields.io/badge/arXiv-2512.24601-b31b1b.svg)](https://arxiv.org/abs/2512.24601)
 
 This paper proposes RLM as a general inference strategy that treats long prompts as an external environment, enabling programmatic problem decomposition.
 
