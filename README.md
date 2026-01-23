@@ -5,7 +5,7 @@
 
 ## What is MCP-RLM?
 
-**MCP-RLM** is an *open-source* implementation of the **Recursive Language Models (RLMs)** architecture introduced by researchers at MIT CSAIL (Zhang et al., 2025).
+**MCP-RLM** is an *open-source* implementation of the **Recursive Language Models (RLMs)** architecture introduced by researchers at MIT CSAIL (Zhang et al., 2025). [![arXiv](https://img.shields.io/badge/arXiv-2512.24601-b31b1b.svg)](https://arxiv.org/abs/2512.24601)
 
 Typically, LLMs have a "Context Window" limit. If you force a document containing millions of words into it, the model will suffer from *context rot* (forgetting the middle part) or become extremely slow and expensive.
 
