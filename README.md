@@ -153,7 +153,7 @@ graph TB
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/MCP-RLM.git
+git clone https://github.com/MuhammadIndar/MCP-RLM.git
 cd MCP-RLM
 
 # Create virtual environment
@@ -559,7 +559,7 @@ MIT License - Copyright (c) 2025 MCP-RLM Contributors
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **MIT CSAIL** - Original RLM research and theoretical foundation
 - **Anthropic** - Model Context Protocol specification and Claude models
@@ -570,8 +570,8 @@ MIT License - Copyright (c) 2025 MCP-RLM Contributors
 
 ## 📞 Support
 
-- **Issues:** [GitHub Issues](https://github.com/yourusername/MCP-RLM/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/yourusername/MCP-RLM/discussions)
+- **Issues:** [GitHub Issues](https://github.com/MuhammadIndar/MCP-RLM/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/MuhammadIndar/MCP-RLM/discussions)
 
 ---
 
@@ -579,9 +579,8 @@ MIT License - Copyright (c) 2025 MCP-RLM Contributors
 
 **If you find this project useful, please consider giving it a ⭐**
 
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/MCP-RLM?style=social)](https://github.com/yourusername/MCP-RLM/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/MCP-RLM?style=social)](https://github.com/yourusername/MCP-RLM/network/members)
+[![GitHub stars](https://img.shields.io/github/stars/yourusername/MCP-RLM?style=social)](https://github.com/MuhammadIndar/MCP-RLM/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/MuhammadIndar/MCP-RLM?style=social)](https://github.com/MuhammadIndar/MCP-RLM/network/members)
 
-Made with ❤️ by the MCP-RLM community
 
 </div>
